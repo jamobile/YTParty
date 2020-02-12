@@ -24,7 +24,7 @@ import { ToastProvider } from './comp/components/toastcontext';
 // };
 
 export default function App(props) {
-  const [fontLoaded, setFontLoaded] = useState(false);
+  // const [fontLoaded, setFontLoaded] = useState(false);
 
   return (
     <SafeAreaProvider>
