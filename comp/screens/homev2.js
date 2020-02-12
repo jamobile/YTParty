@@ -18,6 +18,9 @@ import {
   getQueryAPI
 } from '../api/firebaseapi';
 
+import RNBottomActionSheet from 'react-native-bottom-action-sheet';
+import Icon from 'react-native-vector-icons';
+
 import HScrollerUI from '../ui/categoryscroller';
 
 const HomeScr = props => {
@@ -25,6 +28,74 @@ const HomeScr = props => {
   const [aBanner, setBanner] = useState([]);
   const [aByGenre, setaByGenre] = useState([]);
   const [aVideoShowCase, setaVideoShowCase] = useState([]);
+
+  const [gridview, setgridview] = useState(false);
+
+  let facebook = (
+    <Icon
+      name={'facebook'}
+      color={'#000000'}
+      size={10}
+      family={'FontAwesome'}
+    />
+  );
+  let instagram = (
+    <Icon
+      name={'instagram'}
+      color={'#000000'}
+      size={10}
+      family={'FontAwesome'}
+    />
+  );
+  let skype = (
+    <Icon name={'skype'} color={'#000000'} size={10} family={'FontAwesome'} />
+  );
+  let twitter = (
+    <Icon name={'twitter'} color={'#000000'} size={10} family={'FontAwesome'} />
+  );
+  let whatsapp = (
+    <Icon
+      name={'whatsapp'}
+      color={'#000000'}
+      size={10}
+      family={'FontAwesome'}
+    />
+  );
+  let youtube = (
+    <Icon name={'youtube'} color={'#000000'} size={10} family={'FontAwesome'} />
+  );
+  let google = (
+    <Icon name={'google'} color={'#000000'} size={10} family={'FontAwesome'} />
+  );
+  let linkedin = (
+    <Icon
+      name={'linkedin'}
+      color={'#000000'}
+      size={10}
+      family={'FontAwesome'}
+    />
+  );
+
+  _showGridView = () => {
+    let GridView = RNBottomActionSheet.GridView;
+    GridView.Show({
+      title: 'Awesome!',
+      items: [
+        { title: 'Facebook', icon: 'facebook.png' },
+        { title: 'Instagram' },
+        { title: 'Skype', icon: skype },
+        { title: 'Twitter', icon: twitter },
+        { title: 'WhatsApp', icon: whatsapp },
+        { title: 'YouTube', icon: youtube },
+        { title: 'Google', icon: google },
+        { title: 'LinkedIn', icon: linkedin }
+      ],
+      theme: 'light',
+      onSelection: selection => {
+        console.log('selection: ' + selection);
+      }
+    });
+  };
 
   //E5 syntax function
   function _getBanner(table) {
@@ -131,6 +202,48 @@ const HomeScr = props => {
               nav={props.navigation}
             />
           </ScrollView>
+
+          <View>
+            <RNBottomActionSheet.GridView
+              visible={gridview}
+              title={'Awesome!'}
+              theme={'light'}
+              selection={3}
+              onSelection={selection => {
+                console.log('selection: ' + selection);
+              }}
+            >
+              <RNBottomActionSheet.GridView.Item
+                title={'Facebook'}
+                icon={facebook}
+              />
+              <RNBottomActionSheet.GridView.Item
+                title={'Instagram'}
+                icon={instagram}
+              />
+              <RNBottomActionSheet.GridView.Item title={'Skype'} icon={skype} />
+              <RNBottomActionSheet.GridView.Item
+                title={'Twitter'}
+                icon={twitter}
+              />
+              <RNBottomActionSheet.GridView.Item
+                title={'WhatsApp'}
+                icon={whatsapp}
+              />
+              <RNBottomActionSheet.GridView.Item
+                title={'YouTube'}
+                icon={youtube}
+              />
+              <RNBottomActionSheet.GridView.Item
+                title={'Google'}
+                icon={google}
+              />
+              <RNBottomActionSheet.GridView.Item
+                title={'LinkedIn'}
+                icon={linkedin}
+              />
+            </RNBottomActionSheet.GridView>
+          </View>
         </View>
       </SafeAreaView>
     );
@@ -149,7 +262,8 @@ HomeScr.navigationOptions = ({ navigation }) => {
           onPress={() => {
             {
               console.log('MENU CLICK');
-              navigation.toggleDrawer();
+              //navigation.toggleDrawer();
+              _showGridView();
             }
           }}
         />

@@ -144,6 +144,7 @@ def jscFlavor = 'org.webkit:android-jsc:+'
 def enableHermes = project.ext.react.get("enableHermes", false);
 
 dependencies {
+    implementation project(':react-native-bottom-action-sheet')
     //implementation project(':react-native-android-fullscreen-webview-video')
     //implementation project(':react-native-webview')
     implementation project(':react-native-youtube')
@@ -171,3 +172,11 @@ task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
 }
+
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"

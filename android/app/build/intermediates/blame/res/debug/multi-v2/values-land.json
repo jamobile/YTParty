@@ -14,12 +14,22 @@
                         "endOffsets": "222"
                     },
                     "to": {
-                        "startLines": "5",
+                        "startLines": "6",
                         "startColumns": "4",
-                        "startOffsets": "264",
-                        "endLines": "8",
+                        "startOffsets": "303",
+                        "endLines": "9",
                         "endColumns": "10",
-                        "endOffsets": "431"
+                        "endOffsets": "470"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\aj85980\\.gradle\\caches\\transforms-1\\files-1.1\\jetified-bottomsheetbuilder-fixes-SNAPSHOT.aar\\498a3f9e665dc0b30093f88564702bfb\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "38",
+                        "endOffsets": "89"
                     }
                 },
                 {
@@ -30,6 +40,13 @@
                         "startOffsets": "55,125,196",
                         "endColumns": "69,70,67",
                         "endOffsets": "120,191,259"
+                    },
+                    "to": {
+                        "startLines": "3,4,5",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "94,164,235",
+                        "endColumns": "69,70,67",
+                        "endOffsets": "159,230,298"
                     }
                 }
             ]

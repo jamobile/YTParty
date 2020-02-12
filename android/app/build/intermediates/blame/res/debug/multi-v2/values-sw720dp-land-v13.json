@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\aj85980\\Dropbox\\RN\\YTPARTY\\ytparty\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw720dp-land-v13\\values-sw720dp-land-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\aj85980\\.gradle\\caches\\transforms-1\\files-1.1\\jetified-bottomsheetbuilder-fixes-SNAPSHOT.aar\\498a3f9e665dc0b30093f88564702bfb\\res\\values-sw720dp-land-v13\\values-sw720dp-land-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,101,151",
+                        "endColumns": "45,49,56",
+                        "endOffsets": "96,146,203"
+                    }
+                }
+            ]
+        }
+    ]
+}

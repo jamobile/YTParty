@@ -3,6 +3,7 @@ package com.ytparty;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import ui.bottomactionsheet.RNBottomActionSheetPackage;
 //import com.airship.customwebview.CustomWebViewPackage;
 //import com.reactnativecommunity.webview.RNCWebViewPackage;
 import com.inprogress.reactnativeyoutube.ReactNativeYouTube;
@@ -47,6 +48,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNBottomActionSheetPackage(),
             //new CustomWebViewPackage(),
             //new RNCWebViewPackage(),
             new ReactNativeYouTube(),
