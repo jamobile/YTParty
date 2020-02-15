@@ -4,6 +4,7 @@ ADDED from C:\Users\aj85980\Dropbox\RN\YTPARTY\ytparty\android\app\src\main\Andr
 INJECTED from C:\Users\aj85980\Dropbox\RN\YTPARTY\ytparty\android\app\src\main\AndroidManifest.xml:1:1-48:12
 INJECTED from C:\Users\aj85980\Dropbox\RN\YTPARTY\ytparty\android\app\src\main\AndroidManifest.xml:1:1-48:12
 INJECTED from C:\Users\aj85980\Dropbox\RN\YTPARTY\ytparty\android\app\src\main\AndroidManifest.xml:1:1-48:12
+MERGED from [:react-native-image-helper] C:\Users\aj85980\Dropbox\RN\YTPARTY\ytparty\node_modules\react-native-image-helper\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-bottom-action-sheet] C:\Users\aj85980\Dropbox\RN\YTPARTY\ytparty\node_modules\react-native-bottom-action-sheet\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-youtube] C:\Users\aj85980\Dropbox\RN\YTPARTY\ytparty\node_modules\react-native-youtube\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-safe-area-context] C:\Users\aj85980\Dropbox\RN\YTPARTY\ytparty\node_modules\react-native-safe-area-context\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-9:12
@@ -267,6 +268,8 @@ uses-sdk
 INJECTED from C:\Users\aj85980\Dropbox\RN\YTPARTY\ytparty\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\aj85980\Dropbox\RN\YTPARTY\ytparty\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\aj85980\Dropbox\RN\YTPARTY\ytparty\android\app\src\main\AndroidManifest.xml
+MERGED from [:react-native-image-helper] C:\Users\aj85980\Dropbox\RN\YTPARTY\ytparty\node_modules\react-native-image-helper\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-image-helper] C:\Users\aj85980\Dropbox\RN\YTPARTY\ytparty\node_modules\react-native-image-helper\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-bottom-action-sheet] C:\Users\aj85980\Dropbox\RN\YTPARTY\ytparty\node_modules\react-native-bottom-action-sheet\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-bottom-action-sheet] C:\Users\aj85980\Dropbox\RN\YTPARTY\ytparty\node_modules\react-native-bottom-action-sheet\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-youtube] C:\Users\aj85980\Dropbox\RN\YTPARTY\ytparty\node_modules\react-native-youtube\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41

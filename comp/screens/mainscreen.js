@@ -7,6 +7,7 @@ import { createAppContainer } from 'react-navigation';
 
 import HomePointerScr from './homev2';
 import PlayPointerScr from './play';
+import YTsearchPointerScr from './search';
 
 import HomeNav from '../navigation/homenav';
 
@@ -30,7 +31,7 @@ const HomeTabNavigator = createMaterialBottomTabNavigator(
     },
 
     Find: {
-      screen: HomePointerScr,
+      screen: YTsearchPointerScr,
       navigationOptions: {
         tabBarIcon: tabConfig => (
           <IconIonicons

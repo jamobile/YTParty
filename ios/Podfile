@@ -53,4 +53,6 @@ target 'ytparty' do
 
   pod 'RNBottomActionSheet', :path => '../node_modules/react-native-bottom-action-sheet'
 
+  pod 'RNImageHelper', :path => '../node_modules/react-native-image-helper'
+
 end

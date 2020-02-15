@@ -19,7 +19,7 @@ import {
 } from '../api/firebaseapi';
 
 import RNBottomActionSheet from 'react-native-bottom-action-sheet';
-import Icon from 'react-native-vector-icons';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import HScrollerUI from '../ui/categoryscroller';
 
@@ -29,15 +29,10 @@ const HomeScr = props => {
   const [aByGenre, setaByGenre] = useState([]);
   const [aVideoShowCase, setaVideoShowCase] = useState([]);
 
-  const [gridview, setgridview] = useState(false);
+  const [isVisible, setisVisible] = useState(false);
 
   let facebook = (
-    <Icon
-      name={'facebook'}
-      color={'#000000'}
-      size={10}
-      family={'FontAwesome'}
-    />
+    <Icon name="facebook" color="#000000" size={10} family={'FontAwesome'} />
   );
   let instagram = (
     <Icon
@@ -76,26 +71,67 @@ const HomeScr = props => {
     />
   );
 
-  _showGridView = () => {
-    let GridView = RNBottomActionSheet.GridView;
-    GridView.Show({
-      title: 'Awesome!',
+  _showSheetView = () => {
+    let SheetView = RNBottomActionSheet.SheetView;
+    SheetView.Show({
+      title: 'Menu',
       items: [
-        { title: 'Facebook', icon: 'facebook.png' },
-        { title: 'Instagram' },
-        { title: 'Skype', icon: skype },
-        { title: 'Twitter', icon: twitter },
-        { title: 'WhatsApp', icon: whatsapp },
-        { title: 'YouTube', icon: youtube },
-        { title: 'Google', icon: google },
-        { title: 'LinkedIn', icon: linkedin }
+        {
+          title: 'Account',
+          subTitle: 'Account Menu',
+          icon: facebook,
+          divider: true
+        },
+        {
+          title: 'Profile',
+          subTitle: 'Instagram Description',
+          icon: instagram
+        },
+        {
+          title: 'Subscription',
+          subTitle: 'Skype Description',
+          icon: skype
+        },
+        {
+          title: 'FAQ',
+          subTitle: 'Twitter Description',
+          icon: twitter,
+          divider: true
+        },
+        { title: 'WhatsApp', subTitle: 'WhatsApp Description', icon: whatsapp },
+        { title: 'YouTube', subTitle: 'YouTube Description', icon: youtube },
+        { title: 'Google', subTitle: 'Google Description', icon: google },
+        { title: 'LinkedIn', subTitle: 'LinkedIn Description', icon: linkedin }
       ],
       theme: 'light',
+      selection: 3,
+
       onSelection: selection => {
         console.log('selection: ' + selection);
       }
     });
   };
+
+  // _showGridView = () => {
+  //   let GridView = RNBottomActionSheet.GridView;
+  //   GridView.Show({
+  //     title: 'Awesome!',
+  //     items: [
+  //       { title: 'Facebook', icon: facebook },
+  //       { title: 'Instagram', icon: instagram },
+  //       { title: 'Skype', icon: skype },
+  //       { title: 'Twitter', icon: twitter },
+  //       { title: 'WhatsApp', icon: whatsapp },
+  //       { title: 'YouTube', icon: youtube },
+  //       { title: 'Google', icon: google },
+  //       { title: 'LinkedIn', icon: linkedin }
+  //     ],
+  //     theme: 'dark',
+  //     onSelection: selection => {
+  //       console.log('selection: ' + selection);
+  //     }
+  //   });
+  // };
 
   //E5 syntax function
   function _getBanner(table) {
@@ -112,6 +148,7 @@ const HomeScr = props => {
     getCollectionAPI(table, res => {
       res.forEach(item => {
         setaByGenre(prevArray => [
+          //similar to array.push
           ...prevArray,
           { avatar: item.imageuri, name: item.name }
         ]);
@@ -203,18 +240,18 @@ const HomeScr = props => {
             />
           </ScrollView>
 
-          <View>
-            <RNBottomActionSheet.GridView
-              visible={gridview}
+          <View style={o_style.bottomcontainer}>
+            {/* <RNBottomActionSheet.GridView
+              visible={isVisible}
               title={'Awesome!'}
-              theme={'light'}
+              theme={'dark'}
               selection={3}
               onSelection={selection => {
                 console.log('selection: ' + selection);
               }}
             >
               <RNBottomActionSheet.GridView.Item
-                title={'Facebook'}
+                title={'Facebook1'}
                 icon={facebook}
               />
               <RNBottomActionSheet.GridView.Item
@@ -242,7 +279,59 @@ const HomeScr = props => {
                 title={'LinkedIn'}
                 icon={linkedin}
               />
-            </RNBottomActionSheet.GridView>
+            </RNBottomActionSheet.GridView> */}
+
+            <RNBottomActionSheet.SheetView
+              visible={isVisible}
+              title={'Awesome!'}
+              theme={'light'}
+              onSelection={selection => {
+                console.log('selection: ' + selection);
+              }}
+            >
+              <RNBottomActionSheet.SheetView.Item
+                title={'Facebook'}
+                subTitle={'Facebook Description'}
+                icon={facebook}
+                divider={true}
+              />
+              <RNBottomActionSheet.SheetView.Item
+                title={'Instagram'}
+                subTitle={'Instagram Description'}
+                icon={instagram}
+              />
+              <RNBottomActionSheet.SheetView.Item
+                title={'Skype'}
+                subTitle={'Skype Description'}
+                icon={skype}
+              />
+              <RNBottomActionSheet.SheetView.Item
+                title={'Twitter'}
+                subTitle={'Twitter Description'}
+                icon={twitter}
+                divider={true}
+              />
+              <RNBottomActionSheet.SheetView.Item
+                title={'WhatsApp'}
+                subTitle={'WhatsApp Description'}
+                icon={whatsapp}
+              />
+              <RNBottomActionSheet.SheetView.Item
+                title={'YouTube'}
+                subTitle={'YouTube Description'}
+                icon={youtube}
+              />
+              <RNBottomActionSheet.SheetView.Item
+                title={'Google'}
+                subTitle={'Google Description'}
+                icon={google}
+              />
+              <RNBottomActionSheet.SheetView.Item
+                title={'LinkedIn'}
+                subTitle={'LinkedIn Description'}
+                icon={linkedin}
+              />
+            </RNBottomActionSheet.SheetView>
           </View>
         </View>
       </SafeAreaView>
@@ -263,7 +352,8 @@ HomeScr.navigationOptions = ({ navigation }) => {
             {
               console.log('MENU CLICK');
               //navigation.toggleDrawer();
-              _showGridView();
+              //_showGridView();
+              _showSheetView();
             }
           }}
         />
@@ -283,5 +373,11 @@ const o_style = StyleSheet.create({
   },
   maincontainer: {
     backgroundColor: ColorCt.mainBGColor
+  },
+  bottomcontainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'blue'
   }
 });

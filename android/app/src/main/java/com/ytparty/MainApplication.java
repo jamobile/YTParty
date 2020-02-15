@@ -3,6 +3,7 @@ package com.ytparty;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import prscx.imagehelper.RNImageHelperPackage;
 import ui.bottomactionsheet.RNBottomActionSheetPackage;
 //import com.airship.customwebview.CustomWebViewPackage;
 //import com.reactnativecommunity.webview.RNCWebViewPackage;
@@ -48,6 +49,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNImageHelperPackage(),
             new RNBottomActionSheetPackage(),
             //new CustomWebViewPackage(),
             //new RNCWebViewPackage(),

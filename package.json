@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.6",
+    "axios": "^0.19.2",
     "expo": "~36.0.0",
     "expo-blur": "~8.0.0",
     "expo-font": "~8.0.0",
@@ -16,6 +17,7 @@
     "react-dom": "~16.9.0",
     "react-native": "~0.61.4",
     "react-native-bottom-action-sheet": "^2.0.0",
+    "react-native-elements": "^1.2.7",
     "react-native-expo-image-cache": "^4.1.0",
     "react-native-gesture-handler": "^1.5.3",
     "react-native-image-helper": "0.0.1",
