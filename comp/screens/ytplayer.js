@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
+import APIKey from '../constants/apikey'
 
 //import { WebView } from 'react-native-webview';
 //import WebView from 'react-native-android-fullscreen-webview-video';
@@ -27,7 +28,8 @@ const PlayScr = props => {
 
       <YouTube
         videoId={yid} // The YouTube video ID
-        apiKey="AIzaSyAhG2L2QpT35ZyhlPT26vqvdthzTEpdEhE"
+        //apiKey="AIzaSyAhG2L2QpT35ZyhlPT26vqvdthzTEpdEhE"
+        apiKey={APIKey.youtube_key}
         //ref={_youTubeRef}
         play={true} // control playback of video with true/false
         //fullscreen // control whether the video should play in fullscreen or inline

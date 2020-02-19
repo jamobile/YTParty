@@ -179,6 +179,8 @@ const HomeScr = props => {
   };
 
   //firebase table is case sensitive
+  //these functions need to execute when the component did mount
+  //thats why we are using useEffect here
   useEffect(() => {
     _getBanner('bannerimg');
     _getCategory('BYGENRE');

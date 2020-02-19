@@ -9,6 +9,7 @@ import {
 import ColorCt from '../constants/color';
 
 const CardItem = props => {
+  //console.log('CARDITEM=' + props.imguri);
   return (
     <View style={styles.carditem}>
       <TouchableOpacity onPress={props.onSelect}>

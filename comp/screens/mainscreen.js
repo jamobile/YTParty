@@ -7,7 +7,7 @@ import { createAppContainer } from 'react-navigation';
 
 import HomePointerScr from './homev2';
 import PlayPointerScr from './play';
-import YTsearchPointerScr from './search';
+import YTsearchPointerScr from './search2';
 
 import HomeNav from '../navigation/homenav';
 

@@ -112,7 +112,8 @@ export async function getQueryWithLimitAPI(
       });
 
       onBannerReceived(aBannerResult, lastVisible);
-      console.log('API withLimit END=' + lastVisible);
+      //console.log('API withLimit END=' + lastVisible);
+      //console.log('API withLimit END=' + JSON.stringify(aBannerResult));
     });
 }
 
@@ -149,6 +150,40 @@ export async function getQueryWithLimitLoadMoreAPI(
 
       onBannerReceived(aBannerResult, lastVisible);
       console.log('API withLimit MORE=');
+    });
+}
+
+//----------------
+export async function getWhereAPI(
+  tableRef,
+  searchstr,
+  wlimit,
+  w4,
+  onBannerReceived
+) {
+  //console.log('API GETQUERYWITH LIMIT start=');
+  var aBannerResult = [];
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
+
+  //"'video_name', '>=', search).where('video_name', '<=', search+ '\uf8ff'";
+  await firebase
+    .firestore()
+    .collection(tableRef)
+    .where('keyword', 'array-contains', searchstr)
+    .orderBy(w4)
+    .limit(wlimit)
+    .get()
+    .then(querySnapshot => {
+      let lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
+      querySnapshot.docs.map(item => {
+        aBannerResult.push(item.data());
+      });
+
+      onBannerReceived(aBannerResult, lastVisible);
+      //console.log('API withLimit END=' + lastVisible);
+      //console.log('API withLimit END=' + JSON.stringify(aBannerResult));
     });
 }
 
