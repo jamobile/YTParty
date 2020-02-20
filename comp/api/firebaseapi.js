@@ -187,6 +187,23 @@ export async function getWhereAPI(
     });
 }
 
+export async function getUserAPI(email, password, callback) {
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
+
+  await firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then(res => {
+      //console.log(res.user.email);
+      callback(res.user);
+    })
+    .catch(error => {
+      callback(error);
+    });
+}
+
 // export async function getImagesAPI(onBannerReceived) {
 //   // console.log('API start');
 //   var aBannerResult = [];

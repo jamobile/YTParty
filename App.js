@@ -9,10 +9,12 @@ import SafeAreaView from 'react-native-safe-area-view';
 
 //import Loader from 'react-native-mask-loader';
 
-import MainScreenTab from './comp/screens/mainscreen';
+//import MainScreenTab from './comp/screens/mainscreen';
 
 import Toast from './comp/components/toast';
 import { ToastProvider } from './comp/components/toastcontext';
+
+import LoginScr from './comp/screens/login';
 
 // const fetchFonts = () => {
 //   return Font.loadAsync({
@@ -30,7 +32,8 @@ export default function App(props) {
     <SafeAreaProvider>
       <SafeAreaView forceInset={{ top: 'always' }} style={{ flex: 1 }}>
         <ToastProvider>
-          <MainScreenTab />
+          {/* <MainScreenTab /> */}
+          <LoginScr />
           <Toast />
         </ToastProvider>
       </SafeAreaView>
